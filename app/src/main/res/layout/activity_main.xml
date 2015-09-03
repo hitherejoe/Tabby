@@ -2,40 +2,112 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light_grey">
+    android:background="@color/white">
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_container"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_characters"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:clipToPadding="false"/>
-
-        </android.support.v4.widget.SwipeRefreshLayout>
-
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:id="@+id/progress_indicator"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:padding="16dp">
 
-    </RelativeLayout>
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_color_toolbar"
+                android:layout_alignBaseline="@+id/check_color_toolbar"
+                android:layout_toLeftOf="@+id/check_color_toolbar"
+                android:text="@string/text_toolbar_colored"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_color_toolbar"/>
+
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_show_title"
+                android:layout_alignBaseline="@+id/check_show_title"
+                android:layout_below="@id/text_color_toolbar"
+                android:layout_toLeftOf="@+id/check_show_title"
+                android:text="@string/text_title_displayed"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_show_title"
+                android:layout_below="@id/check_color_toolbar"/>
+
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_close_icon"
+                android:layout_alignBaseline="@+id/check_close_icon"
+                android:layout_below="@id/text_color_toolbar"
+                android:layout_toLeftOf="@+id/check_show_title"
+                android:text="@string/text_back_arrow_displayed"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_close_icon"
+                android:layout_below="@id/check_show_title"/>
+
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_action_bar_icon"
+                android:layout_alignBaseline="@+id/check_action_bar_icon"
+                android:layout_below="@id/text_close_icon"
+                android:layout_toLeftOf="@+id/check_close_icon"
+                android:text="@string/text_actionbar_icon_displayed"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_action_bar_icon"
+                android:layout_below="@id/check_close_icon"/>
+
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_menu_items"
+                android:layout_alignBaseline="@+id/check_menu_items"
+                android:layout_below="@id/text_action_bar_icon"
+                android:layout_toLeftOf="@+id/check_menu_items"
+                android:text="@string/text_menu_items_displayed"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_menu_items"
+                android:layout_below="@id/check_action_bar_icon"/>
+
+            <TextView
+                style="@style/TextOptionsListStyle"
+                android:id="@+id/text_custom_animations"
+                android:layout_alignBaseline="@+id/check_custom_animations"
+                android:layout_below="@id/text_menu_items"
+                android:layout_toLeftOf="@+id/check_custom_animations"
+                android:text="@string/text_custom_animations"/>
+
+            <CheckBox
+                style="@style/CheckBoxStyle"
+                android:id="@+id/check_custom_animations"
+                android:layout_below="@id/check_menu_items"
+                android:checked="true"/>
+
+            <TextView
+                style="@style/TitleTextStyle"
+                android:id="@+id/text_launch_site"
+                android:layout_below="@+id/check_custom_animations"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/touchable_background_white"
+                android:padding="16dp"
+                android:text="@string/text_launch_custom_tab"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
