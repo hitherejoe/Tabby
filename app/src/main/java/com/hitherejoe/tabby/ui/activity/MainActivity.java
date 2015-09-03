@@ -26,12 +26,6 @@ import timber.log.Timber;
 
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.layout_main)
-    CoordinatorLayout mLayoutMainCoordinator;
-
-    @Bind(R.id.toolbar)
-    Toolbar mToolbar;
-
     @Bind(R.id.check_color_toolbar)
     CheckBox mColorToolbarCheck;
 
@@ -50,6 +44,12 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.check_custom_animations)
     CheckBox mCustomAnimationsCheck;
 
+    @Bind(R.id.layout_main)
+    CoordinatorLayout mLayoutMainCoordinator;
+
+    @Bind(R.id.toolbar)
+    Toolbar mToolbar;
+
     private static final String URL_ARGOS = "http://www.argos.co.uk";
 
     private Bitmap mActionButtonBitmap;
@@ -60,10 +60,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         applicationComponent().inject(this);
         setupCustomTabHelper();
         mSubscriptions = new CompositeSubscription();
-        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setupToolbar();
         decodeBitmaps();
