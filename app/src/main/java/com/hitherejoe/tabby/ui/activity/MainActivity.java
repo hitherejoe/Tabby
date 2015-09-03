@@ -64,15 +64,12 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         applicationComponent().inject(this);
-        mCustomTabActivityHelper = new CustomTabActivityHelper();
-        mCustomTabActivityHelper.setConnectionCallback(mConnectionCallback);
-        mCustomTabActivityHelper.mayLaunchUrl(Uri.parse(URL_ARGOS), null, null);
+        setupCustomTabHelper();
         mSubscriptions = new CompositeSubscription();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setupToolbar();
-        getShareIconBitmap();
-        getCloseIconBitmap();
+        decodeBitmaps();
     }
 
     @Override
@@ -100,6 +97,17 @@ public class MainActivity extends BaseActivity {
 
     private void setupToolbar() {
         setSupportActionBar(mToolbar);
+    }
+
+    private void setupCustomTabHelper() {
+        mCustomTabActivityHelper = new CustomTabActivityHelper();
+        mCustomTabActivityHelper.setConnectionCallback(mConnectionCallback);
+        mCustomTabActivityHelper.mayLaunchUrl(Uri.parse(URL_ARGOS), null, null);
+    }
+
+    private void decodeBitmaps() {
+        decodeBitmap(R.drawable.ic_share);
+        decodeBitmap(R.drawable.ic_arrow_back);
     }
 
     private void openCustomTab() {
@@ -140,8 +148,8 @@ public class MainActivity extends BaseActivity {
                 this, intentBuilder.build(), Uri.parse(URL_ARGOS), new WebviewFallback());
     }
 
-    private void getShareIconBitmap() {
-        mSubscriptions.add(ImageUtils.decodeBitmap(this, R.drawable.ic_share)
+    private void decodeBitmap(final int resource) {
+        mSubscriptions.add(ImageUtils.decodeBitmap(this, resource)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Subscriber<Bitmap>() {
@@ -150,34 +158,16 @@ public class MainActivity extends BaseActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        Timber.e("There was a problem getting the share icon bitmap " + e);
+                        Timber.e("There was a problem decoding the bitmap " + e);
                     }
 
                     @Override
                     public void onNext(Bitmap bitmap) {
-                        mActionButtonBitmap = bitmap;
-                    }
-                }));
-    }
-
-    private void getCloseIconBitmap() {
-        mSubscriptions.add(ImageUtils.decodeBitmap(this, R.drawable.ic_arrow_back)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Subscriber<Bitmap>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.e("There was a problem getting the close icon bitmap " + e);
-                    }
-
-                    @Override
-                    public void onNext(Bitmap bitmap) {
-                        mCloseButtonBitmap = bitmap;
+                        if (resource == R.drawable.ic_share) {
+                            mActionButtonBitmap = bitmap;
+                        } else if (resource == R.drawable.ic_arrow_back) {
+                            mCloseButtonBitmap = bitmap;
+                        }
                     }
                 }));
     }
