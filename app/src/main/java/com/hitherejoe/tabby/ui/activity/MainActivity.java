@@ -8,10 +8,7 @@ import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.CheckBox;
-import android.widget.Toast;
 
 import com.hitherejoe.tabby.R;
 import com.hitherejoe.tabby.util.CustomTabActivityHelper;
