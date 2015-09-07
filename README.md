@@ -3,8 +3,6 @@ Tabby
 
 <p align="center">
     <img src="images/ic_web.png" alt="Web Launcher"/>
-    <br/>
-    Image credit: [Theresa Berens](https://thenounproject.com/theresaberens)
 </p>
 Tabby (Cat), is a simple sample application demoing the features of the new Chrome Custom Tabs support library for Android. Using this application you can demo:
 
@@ -40,3 +38,10 @@ Building
 To build and install a debug version, run this from the root of the project:
 
     ./gradlew installDebug
+
+Attributions
+------------
+
+Thanks to the following for use of images off of Noun Project:
+
+[Theresa Berens](https://thenounproject.com/theresaberens) - Cat Icon
