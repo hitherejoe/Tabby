@@ -3,6 +3,8 @@ Tabby
 
 <p align="center">
     <img src="images/ic_web.png" alt="Web Launcher"/>
+    <br/>
+    Image credit: [Theresa Berens](https://thenounproject.com/theresaberens)
 </p>
 Tabby (Cat), is a simple sample application demoing the features of the new Chrome Custom Tabs support library for Android. Using this application you can demo:
 
