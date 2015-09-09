@@ -2,7 +2,6 @@ package com.hitherejoe.tabby.util;
 
 import android.app.Activity;
 import android.content.ComponentName;
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsClient;
