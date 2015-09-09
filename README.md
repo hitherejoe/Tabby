@@ -38,3 +38,10 @@ Building
 To build and install a debug version, run this from the root of the project:
 
     ./gradlew installDebug
+
+Attributions
+------------
+
+Thanks to the following for use of images off of Noun Project:
+
+[Theresa Berens](https://thenounproject.com/theresaberens) - Cat Icon
