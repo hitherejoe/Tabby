@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.WebViewActivity">
+        <activity
+            android:name=".ui.activity.WebViewActivity"
+            android:theme="@style/AppTheme.ActionBar">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".ui.activity.MainActivity" />
