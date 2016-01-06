@@ -1,5 +1,5 @@
 #Tabby
-[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23169-blue.svg)](http://androidweekly.net/issues/issue-169)
+[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23169-blue.svg)](http://androidweekly.net/issues/issue-169) [![Medium](https://img.shields.io/badge/Medium-hitherejoe-000000.svg)](https://medium.com/ribot-labs/exploring-chrome-customs-tabs-on-android-ef427effe2f4#.2r2nwxh2l)
 =====
 
 <p align="center">
