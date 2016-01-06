@@ -1,4 +1,5 @@
 Tabby
+[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23169-blue.svg)](http://androidweekly.net/issues/issue-169)
 =====
 
 <p align="center">
